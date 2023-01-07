@@ -8,6 +8,28 @@ body {
     font-family: sans-serif;
 }
 
+.navbar {
+    width: 100%;
+    height: 100px;
+    display: inline-block;
+
+    font-family: sans-serif;
+    font-size: 25px;
+}
+
+.navbar > * {
+    float: left;
+}
+
+.navbar > img {
+    border-radius: 50%;
+    margin: 2px;
+}
+
+.navbar > p {
+    margin: 30px auto auto;
+}
+
 #intro {
     position: absolute;
     top: 50%;
@@ -19,11 +41,13 @@ body {
     text-align: center;
 }
 
-#intro #start {
+#start {
     font-size: 25px;
+    grid-column: 1;
+    height: 40px;
 }
 
-#intro img {
+#start img {
     animation: rotation 2s infinite linear;
 }
 
@@ -40,12 +64,132 @@ body {
 }
 
 #card {
-    height: 400px;
+    height: 450px;
     width: 500px;
     border: double 4px transparent;
     border-radius: 15px;
     background-image: linear-gradient(135deg, #000, #0f0f0f), radial-gradient(circle at top left, #f00,#3020ff);
     background-origin: border-box;
     background-clip: padding-box, border-box;
+
+    display: grid;
+    grid-template-columns: 100%;
 }
 
+@keyframes text-loop {
+    from {
+        background-position: 0 center;
+    }
+    to {
+          background-position: -200% center;
+    }
+}
+
+.like {
+    top: 70px;
+    width: 100%;
+    font-family: sans-serif;
+    font-size: 25px;
+    display: inline-block;
+    justify-content: center;
+    height: 50px;
+    position: absolute;
+    grid-column: 2;
+}
+
+.coding {
+    background: linear-gradient(to right, #00ff00, #ccffcc, #00ff00);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: text-loop 3s linear infinite;
+}
+
+.like-txt {
+    position: absolute;
+    right: 295px;
+}
+
+.boxes {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+}
+
+.boxes:nth-child(0) {
+    height: 25%;
+    width: 100%;
+
+    grid-area: 1/1/2/3;
+}
+
+.boxes > * {
+    margin-top: 100px;
+
+    background: transparent;
+    height: 100%;
+    width: 97%;
+    transition: 0.5s ease-in-out;
+    z-index: 3;
+    float: left;
+}
+
+.boxes > *:not(.placeholder) {
+    border: #0c0c0c solid 3px;
+    border-radius: 5px;
+    mso-border-shadow: yes;
+}
+
+.boxes > * > button > img{
+    display: block;
+    width: 60%;
+
+    margin: 10px auto auto;
+}
+
+.boxes > * > button {
+    background: transparent;
+    border: none;
+}
+
+.boxes > * > button:hover {
+    cursor: pointer;
+}
+
+@keyframes img_rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.boxes > *:hover .logo {
+    animation: img_rotate 2s infinite ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+
+.github {
+    background: linear-gradient(45deg, #000, #111, #222);
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.blog {
+    background: #ffff00;
+    grid-area: 2/2/3/3;
+}
+
+.boxes > *:hover {
+    transform: translateY(-30%);
+}
+
+.hidden {
+    display: none;
+}
