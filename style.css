@@ -1,0 +1,51 @@
+html {
+    height: 100%;
+    background: linear-gradient(135deg, #000, #0f0f0f) no-repeat;
+}
+
+body {
+    color: white;
+    font-family: sans-serif;
+}
+
+#intro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#intro p {
+    text-align: center;
+}
+
+#intro #start {
+    font-size: 25px;
+}
+
+#intro img {
+    animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(-20deg);
+    }
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+#card {
+    height: 400px;
+    width: 500px;
+    border: double 4px transparent;
+    border-radius: 15px;
+    background-image: linear-gradient(135deg, #000, #0f0f0f), radial-gradient(circle at top left, #f00,#3020ff);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
