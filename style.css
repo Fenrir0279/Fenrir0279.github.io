@@ -193,3 +193,56 @@ body {
 .hidden {
     display: none;
 }
+
+.icons {
+    display: inline-block;
+    float: right;
+}
+
+.icons > * {
+    margin: 20px;
+    width: 150px;
+    float: right;
+    text-align: center;
+}
+
+.projects:after {
+    content: '📁';
+}
+
+@keyframes add-content-projects {
+    10% {
+        content: 'M'
+    }
+    20% {
+        content: 'My '
+    }
+    30% {
+        content: 'My P'
+    }
+    40% {
+        content: 'My Pr'
+    }
+    50% {
+        content: 'My Pro'
+    }
+    60% {
+        content: 'My Proj'
+    }
+    70% {
+        content: 'My Proje'
+    }
+    80% {
+        content: 'My Projec'
+    }
+    90% {
+        content: 'My Project'
+    }
+    100% {
+        content: 'My Projects'
+    }
+}
+
+.projects:hover:after {
+    animation: add-content-projects 1s forwards;
+}
